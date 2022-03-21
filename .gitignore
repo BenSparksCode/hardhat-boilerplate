@@ -78,3 +78,4 @@ typings/
 # Hardhat cache and artifacts
 cache/
 artifacts/
+.DS_Store
