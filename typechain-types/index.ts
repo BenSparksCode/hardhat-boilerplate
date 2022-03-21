@@ -2,5 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export type { Contract } from "./Contract";
+export type { TemplateContract } from "./TemplateContract";
 
 export { Contract__factory } from "./factories/Contract__factory";
+export { TemplateContract__factory } from "./factories/TemplateContract__factory";

@@ -1,18 +1,21 @@
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { Contract } from "@ethersproject/contracts";
 import { ethers, expect, constants } from "./constants.test";
+import { TemplateContract, TemplateContract__factory } from "../typechain-types";
 
 describe("tests", () => {
   let owner: SignerWithAddress, artist: SignerWithAddress, buyer: SignerWithAddress;
 
   // this var name should be changed to something more descriptive
-  let Contract: Contract;
+  let TemplateContractArtifacts: TemplateContract__factory;
+  let TemplateContract: TemplateContract;
 
   beforeEach(async () => {
     // Put logic that will be needed before every test
     [owner, artist, buyer] = await ethers.getSigners();
 
-    Contract = await deployContract(owner);
+    TemplateContractArtifacts = await ethers.getContractFactory("Contract");
+    TemplateContract = await TemplateContractArtifacts.connect(owner).deploy();
   });
 
   describe("view functions", () => {
